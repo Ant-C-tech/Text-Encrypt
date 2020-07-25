@@ -25,25 +25,46 @@
 
     <div class="container bg-info">
 
-        <p class="descript text-center text-white">The app encrypts plain text and decrypts encrypted text. App allows
+        <p class="descript text-center text-white text-dark">The app encrypts plain text and decrypts encrypted text. App allows
             to make
             the
             encrypted/decrypted text easily for next sending with any messager. As a key for encrypt you can use your
             own text. We
             recomend using some text with length from 150 up to 9999 symbols. You have to use the key-text on
-            language, which you will write your message. For example we offered quote from Wiki (for encrypt messages in English).
+            language, which you will write your message. For example we offered quote from Wiki (for encrypt messages in
+            English).
         </p>
 
         <hr>
 
+        <p id="example" class="example text-light bg-secondary">By default we will use this key-text:<br> "One of the earliest forms of encryption is symbol
+            replacement, which was first found in the tomb of Khnumhotep II, who lived in 1900 B.C. Egypt. Symbol
+            replacement encryption is “non-standard,” which means that the symbols require a cipher or key to
+            understand. This type of early encryption was used throughout Ancient Greece and Rome for military
+            purposes."
+        </p>
+
         <div class="row d-flex justify-content-center">
             <div class="col-12">
                 <div class="form-group mb-0">
-                    <textarea id="keyArea" class="form-control" name="" rows="7"
-                        placeholder="One of the earliest forms of encryption is symbol replacement, which was first found in the tomb of Khnumhotep II, who lived in 1900 B.C. Egypt. Symbol replacement encryption is “non-standard,” which means that the symbols require a cipher or key to understand. This type of early encryption was used throughout Ancient Greece and Rome for military purposes."></textarea>
+                    <textarea id="keyArea" class="form-control" name="" rows="3"
+                        placeholder="You can add your own text-key here..."></textarea>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-6">
+                <button id="save" class="btn btn-dark btn-lg btn-block mt-3" type="button">
+                    Save text to the Local Storage
+                </button>
+            </div>
+            <div class="col-6">
+                <button id="download" class="btn btn-dark btn-lg btn-block mt-3" type="button">
+                    Use my last text
+                </button>
+            </div>
+        </div>
+
 
         <hr>
 
@@ -51,29 +72,30 @@
             <div class="col-6">
                 <div class="form-group">
                     <textarea id="userText" class="form-control" name="" rows="5"
-                        placeholder="Enter text for encrypt"></textarea>
+                        placeholder="Enter text for encrypt..."></textarea>
                 </div>
-                <button id="encrypt" class="btn btn-secondary btn-lg btn-block" type="button">Encrypt</button>
+                <button id="encrypt" class="btn btn-dark btn-lg btn-block" type="button">Encrypt</button>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <textarea id="userCode" class="form-control" name="" rows="5"
-                        placeholder="Enter code for decrypt"></textarea>
+                        placeholder="Enter code for decrypt..."></textarea>
                 </div>
-                <button id="decrypt" class="btn btn-secondary btn-lg btn-block" type="button">Decrypt</button>
+                <button id="decrypt" class="btn btn-dark btn-lg btn-block" type="button">Decrypt</button>
             </div>
         </div>
 
         <hr>
 
-        <p id="result" class="result bg-light">Result</p>
+        <p id="result" class="result text-light bg-secondary">Result</p>
 
         <hr>
 
         <div class="row">
             <div class="col-12">
-                <button id="copy" class="btn btn-dark btn-lg btn-block mb-3" type="button">Copy result from encryption to
-                    decrypt section</button>
+                <button id="copy" class="btn btn-dark btn-lg btn-block mb-3" type="button">
+                    Copy result of encryption to decrypt section
+                </button>
             </div>
         </div>
     </div>

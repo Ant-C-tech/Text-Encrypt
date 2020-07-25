@@ -1,7 +1,9 @@
+'use strict'
+
 window.onload = textEncrypt()
 
 function textEncrypt() {
-    const startValueOfKeyArea = 'One of the earliest forms of encryption is symbol replacement, which was first found in the tomb of Khnumhotep II, who lived in 1900 B.C. Egypt. Symbol replacement encryption is “non-standard,” which means that the symbols require a cipher or key to understand. This type of early encryption was used throughout Ancient Greece and Rome for military purposes.'
+    const startValueOfKeyArea = document.querySelector('#example').innerHTML
     const keyArea = document.querySelector('#keyArea')
     const resultArea = document.querySelector('#result')
     const userTextArea = document.querySelector('#userText')
@@ -10,7 +12,9 @@ function textEncrypt() {
     let objForEncrypt = {}
     let objForDecrypt = {}
 
+    document.querySelector('#save').addEventListener('click', saveUserText)
 
+    document.querySelector('#download').addEventListener('click', downloadSavedText)
 
     document.querySelector('#encrypt').addEventListener('click', () => {
         getKeys()
@@ -34,7 +38,7 @@ function textEncrypt() {
         //Generate encrypt key-object
         for (let i = 0; i < keyStr.length; i++) {
             let key = keyStr[i]
-            let value = i
+            let value = i + 142 //;)
 
             objForEncrypt[key] = value
         }
@@ -62,7 +66,7 @@ function textEncrypt() {
         if (taskStr) {
             let encryptServiceStr = ''
 
-            for (char of taskStr) {
+            for (let char of taskStr) {
                 if (objForEncrypt[char]) {
                     encryptServiceStr += objForEncrypt[char]
                 } else {
@@ -139,6 +143,16 @@ function textEncrypt() {
                 decryptFirstChar()
             }
         }
+    }
+
+    function saveUserText() {
+        localStorage.setItem('userText', keyArea.value)
+    }
+
+    function downloadSavedText() {
+        (!(localStorage.getItem('userText', keyArea.value))) ?
+        resultArea.innerHTML = 'We do not have any saved key-text(':
+        keyArea.value = localStorage.getItem('userText', keyArea.value)
     }
 
 }

@@ -1,8 +1,8 @@
 .descript {
-    font-size: 20px;
+    font-size: 16px;
 }
 
-.result {
+.result, .example {
     max-width: 1108px;
     padding: 6px 12px;
     border-radius: 5px;
@@ -12,4 +12,16 @@
 
 footer {
     font-size: 16px;
+}
+
+@media screen and (max-width:768px) {
+    #save, #download {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width:374px) {
+    #save, #download {
+        height: 140px;
+    }
 }
